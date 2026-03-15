@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Example: Console (seed=42)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build: console example",
+            "program": "${workspaceFolder}/examples/FloorMaps.Examples.Console/bin/Debug/net10.0/FloorMaps.Examples.Console.dll",
+            "args": ["42", "80", "40"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Example: Console (circle, seed=7)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build: console example",
+            "program": "${workspaceFolder}/examples/FloorMaps.Examples.Console/bin/Debug/net10.0/FloorMaps.Examples.Console.dll",
+            "args": ["7", "80", "80", "circle"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Example: Raylib window",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build: raylib example",
+            "program": "${workspaceFolder}/examples/FloorMaps.Examples.Raylib/bin/Debug/net10.0/FloorMaps.Examples.Raylib.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole"
+        },
+        {
+            "name": "Tests: debug",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build: solution",
+            "program": "${workspaceFolder}/tests/FloorMaps.Tests/bin/Debug/net10.0/FloorMaps.Tests.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
+    ]
+}

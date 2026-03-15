@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/examples/">
+    <Project Path="examples/FloorMaps.Examples.Console/FloorMaps.Examples.Console.csproj" />
+    <Project Path="examples/FloorMaps.Examples.Raylib/FloorMaps.Examples.Raylib.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/FloorMaps/FloorMaps.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/FloorMaps.Tests/FloorMaps.Tests.csproj" />
+  </Folder>
+</Solution>

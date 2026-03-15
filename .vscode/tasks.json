@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build: solution",
+            "command": "dotnet",
+            "type": "process",
+            "args": ["build", "${workspaceFolder}/FloorMaps.sln"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": { "reveal": "silent" },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build: library",
+            "command": "dotnet",
+            "type": "process",
+            "args": ["build", "${workspaceFolder}/src/FloorMaps/FloorMaps.csproj"],
+            "presentation": { "reveal": "silent" },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build: console example",
+            "command": "dotnet",
+            "type": "process",
+            "args": ["build", "${workspaceFolder}/examples/FloorMaps.Examples.Console/FloorMaps.Examples.Console.csproj"],
+            "presentation": { "reveal": "silent" },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build: raylib example",
+            "command": "dotnet",
+            "type": "process",
+            "args": ["build", "${workspaceFolder}/examples/FloorMaps.Examples.Raylib/FloorMaps.Examples.Raylib.csproj"],
+            "presentation": { "reveal": "silent" },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "test: run all",
+            "command": "dotnet",
+            "type": "process",
+            "args": ["test", "${workspaceFolder}/FloorMaps.sln", "--logger", "console;verbosity=normal"],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": { "reveal": "always", "panel": "shared" },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
