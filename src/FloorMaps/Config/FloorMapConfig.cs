@@ -71,6 +71,13 @@ namespace FloorMaps
         /// </summary>
         public int MaxPortalWidth { get; set; } = 2;
 
+        // ── Room heights ─────────────────────────────────────────────────────────
+        /// <summary>Minimum ceiling height for rooms, in world units.</summary>
+        public float MinRoomHeight { get; set; } = 3.0f;
+
+        /// <summary>Maximum ceiling height for rooms, in world units.</summary>
+        public float MaxRoomHeight { get; set; } = 9.0f;
+
         // ── Seeding ──────────────────────────────────────────────────────────────
         /// <summary>
         /// RNG seed for deterministic generation.
@@ -95,6 +102,10 @@ namespace FloorMaps
                 throw new ArgumentException("MaxHallwayWidth must be >= MinHallwayWidth", nameof(MaxHallwayWidth));
             if (LoopFactor < 0f || LoopFactor > 1f)
                 throw new ArgumentException("LoopFactor must be in [0,1]", nameof(LoopFactor));
+            if (MinRoomHeight <= 0f)
+                throw new ArgumentException("MinRoomHeight must be > 0", nameof(MinRoomHeight));
+            if (MaxRoomHeight < MinRoomHeight)
+                throw new ArgumentException("MaxRoomHeight must be >= MinRoomHeight", nameof(MaxRoomHeight));
             if (MinPortalWidth < 1)
                 throw new ArgumentException("MinPortalWidth must be >= 1", nameof(MinPortalWidth));
             if (MaxPortalWidth < MinPortalWidth)

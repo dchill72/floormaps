@@ -41,6 +41,13 @@ namespace FloorMaps
             // Re-assign sequential IDs after culling.
             var finalRooms = ReIndex(rooms);
 
+            // ── 4b. Assign room heights ──────────────────────────────────────────
+            foreach (var room in finalRooms)
+            {
+                double t = rng.NextDouble();
+                room.Height = (float)(config.MinRoomHeight + t * (config.MaxRoomHeight - config.MinRoomHeight));
+            }
+
             // ── 5. Connectivity graph ────────────────────────────────────────────
             var edges = GraphBuilder.Build(finalRooms, config.LoopFactor, rng);
 

@@ -8,6 +8,9 @@ namespace FloorMaps
         public TileRect Bounds { get; }
         public RoomType Type { get; internal set; }
 
+        /// <summary>Ceiling height of this room in world units, derived from the map seed.</summary>
+        public float Height { get; internal set; }
+
         internal List<Hallway> _connections = new List<Hallway>();
         public IReadOnlyList<Hallway> Connections => _connections;
 
